@@ -1,6 +1,8 @@
-CREATE DATABASE urmastehver_poll COLLATE utf8mb4_estonian_ci;
+-- Sisesta **** asemele config.php failis määratud andmebaai nimi
 
-USE urmastehver_poll;
+CREATE DATABASE **** COLLATE utf8mb4_estonian_ci;
+
+USE ****;
 
 CREATE TABLE questions 
 ( id_q INT(11) UNSIGNED NOT NULL AUTO_INCREMENT ,
