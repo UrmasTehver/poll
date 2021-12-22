@@ -1,3 +1,51 @@
+Simple poll app (made as a school project)
+
+Introduction
+
+The application displays an active question to the user, together with the answer options and the number of people who have already answered the question. After selecting an answer choice, the selected answer is stored in the database and the user is presented with the results of the survey. 
+(the number of respondents, the number of responses for all answer options and their percentage).
+
+A question can only be answered once from a single IP address (for testing purposes, the IP address check is currently commented out in the file poll_result.php).
+
+The application administrator can, using the administration module
+- to create two or three multiple-choice questions. The question will be stored in the database. 
+- determine which question is active
+- view the result of the question (number of respondents, number of responses for all answer options and their percentage).
+- delete the selected question (a question can be deleted if there is no user-entered answer stored in the database).
+
+NOTE: The administration module should be separated from the normal user environment and access should be via user authentication, 
+but the project specification did not require this functionality and it is currently not implemented.
+
+Installing the application
+
+After saving all the files, the following settings need to be made:
+
+In the file config.php:
+
+define('HOST', '.......'); // Enter the name of the database server.
+define('USERNAME', '..........'); // Specify the username
+define('PASSWORD', '.............'); // Enter the password.
+define('DBNAME', '.............'); // Specify the database name
+
+In the init.sql file
+
+CREATE DATABASE ........... COLLATE utf8mb4_estonian_ci; // Enter the same database name as in the config.php file.
+
+USE ...............; // Enter the same database name as in the config.php file
+
+Then open the page http://..../poll/install.php in the browser and the application will make the database and its tables on the server. 
+If the installation is successful, the user will be notified, if it fails, an error message will be displayed.
+
+To use the application, open http://.../poll/index.php in the browser
+
+In addition, you can specify in the config.php file if you wish:
+- the number of records in the question table to be displayed on one page (by changing the value of the MAXPERPAGE constant, default 8).
+- max number of buttons for browsing the pages of the question table (by changing the value of the MAX_BUTTONS constant, default 5).
+
+The "samples" directory stores a database of data for testing.
+
+
+
 Lihtne küsitluste rakendus (tehtud koolitööna)
 
 Sissejuhatus
